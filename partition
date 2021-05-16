@@ -1,0 +1,40 @@
+The following explains the process of partitioning a storage device with the parted command. \
+
+1. List the partitions: Use parted -l to identify the storage device we want to partition. Typically, the first hard disk (/dev/sda or /dev/vda) will contain the operating system, so look for another disk to find the one we want (e.g., /dev/sdb, /dev/sdc, /dev/vdb, /dev/vdc, etc.).
+
+command: parted -l
+
+2. Open the storage device: 
+Use parted to begin working with the selected storage device. In this example, the device is the third disk on a virtual system (/dev/vdc). It is important to indicate the specific device we want to use. If we just type parted with no device name, it will randomly select a storage device to modify.
+
+command: parted /dev/vdc
+
+3. Set the partition table: Set the partition table type to GPT, then type "Yes" to accept it.
+
+       (parted) mklabel gpt
+
+The mklabel and mktable commands are used for the same purpose (making a partition table on a storage device). The supported partition tables are: aix, amiga, bsd, dvh, gpt, mac, ms-dos, pc98, sun, and loop. Remember mklabel will not make a partition, rather it will make a partition table.
+
+
+4. Review the partition table: Show information about the storage device.
+
+(parted) print
+Model: Virtio Block Device (virtblk)
+Disk /dev/vdc: 1396MB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+Disk Flags:
+Number Start End Size File system Name Flags
+
+
+5. Get help: To find out how to make a new partition, type: (parted) help mkpart.
+
+6. Make a partition: To make a new partition (in this example, 1,396MB on partition 0), type the following:
+
+(parted) mkpart primary 0 1396MB
+
+
+7. Save and quit: Changes are automatically saved when we quit parted. To quit, type the following:
+
+(parted) quit
+
