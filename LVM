@@ -1,0 +1,13 @@
+Logical Volume Management or LVM is a framework of the Linux operating system that has been introduced for the easier management of physical storage devices. The concept of logical volume management is very much similar to the concept of virtualization, i.e. you can create as many virtual storage volumes on top of a single storage device as you want. The logical storage volumes thus created can be expanded or shrunk according to your growing or reducing storage needs.
+
+
+
+Benefits of LVM:
+The following are some of the biggest advantages of using logical volume management or LVM:
+
+It allows you to efficiently manage and utilize your physical disk space.
+It is capable of creating such logical volumes whose capacity can be increased or decreased depending upon your requirements.
+If you intend to keep backups of your data on multiple logical volumes, then this increases the availability of your data.
+A new physical device can easily be added below the volume group with zero downtime and without any service disruption.
+LVM allows you to partition a single physical device into multiple logical partitions as well as it also allows you to integrate multiple physical devices into a single volume group.
+
