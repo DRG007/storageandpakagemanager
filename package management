@@ -1,0 +1,18 @@
+YUM is the primary package management tool for installing, updating, removing, and managing software packages in Red Hat Enterprise Linux.  YUM can manage packages from installed repositories in the system or from .rpm packages. The main configuration file for YUM is at /etc/yum.conf, and all the repos are at /etc/yum.repos.d.
+
+
+manage packages in Linux with YUM. 
+
+command is : yum -option command
+
+There are many options and commands available to use with YUM. 
+
+    Command			            	Purpose
+1)  yum install		 Installs the specified packages
+2)  remove		     Removes the specified packages
+3)  search			   Searches package metadata for keywords
+4)  update			   Updates each package to the latest version
+5)  history			   Displays what has happened in past transactions
+
+We can undo or redo certain transactions using the history command. 
+command: yum history undo <id>
